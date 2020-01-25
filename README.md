@@ -135,66 +135,68 @@ A phage assembly reaction follows a temporal program (1). First, the genes contr
 
 The complete set of model equations is shown below. 
 #### Reaction Fluxes
-\[\begin{aligned}
-                 [E.Coli\ Translation] &amp;=  k_{TL,E.Coli}\cdot[E.Coli\ mRNA]\cdot[Ribosome]\\
-                 [E.Coli\ mRNA\ Degradation] &amp;= k_{deg,E.ColiRNA}\cdot[E.Coli\ mRNA]\\
-                 [E.Coli\ Transcription] &amp;= k_{TX,E.Coli}\cdot[E.Coli\ RNAP]\cdot[Phage\ DNA]\cdot e^{-\frac{t}{7200}}\\
-                 [T7\ Genome\ Replication] &amp;= k_{DNA}\cdot[T7\ DNAP]\cdot[Phage\ DNA]\cdot e^{-\frac{t}{3600}}\\
-                 [DNA\ Degradation] &amp;= k_{deg,PhageDNA}\cdot[Phage DNA]\\
-                 [T7\ Transscription] &amp;= k_{TX,T7}\cdot e^{-\frac{t}{7200}}\cdot[T7\ RNAP]\cdot [Phage\ DNA]\\
-                 [T7\ mRNA\ Degradation] &amp;= k_{deg,T7RNA}\cdot [T7\ mRNA]\\
-                 [T7\ Translation] &amp;= k_{TL,T7}\cdot[T7\ mRNA]\cdot [Ribosome]\\
-                 [Phage\ Packaging] &amp;= k_{packaging}\cdot[Procapsid]\cdot [Phage\ DNA]\\
-                 [Phage\ Assembly] &amp;=k_{assembly}\cdot \frac{Capsid^{10}}{10^{10}+Capsid^{10}}\\
-                 [T7\ DNAP\ Translation] &amp;= k_{TL,E.Coli}\cdot[E.Coli\ mRNA]\cdot[Ribosome]
-                 \end{aligned}\] 
-                 
+![](img/fluxes.png)
 #### Ordinary Differential Equation System
-<img src="https://render.githubusercontent.com/render/math?math=\begin{aligned}
-                 \frac{d[E.Coli\ mRNA]}{dt} &amp;=\ -[E.Coli\ mRNA\ Degradation] + [E.Coli\ Transcription]\\
-                 \frac{d[Capsid]}{dt} &amp;=\ [E.Coli\ Translation] - 420\cdot[Phage\ Assembly]\\
-                 \frac{d[Phage\ DNA]}{dt} &amp;=\ -[Phage\ Packaging] - [DNA\ Degradation] + [T7\ Genome Replication]\\
-                 \frac{d[Phage]}{dt} &amp;=\ [Phage\ Packaging]\\
-                 \frac{d[T7\ DNAP]}{dt} &amp;=\ [T7\ DNAP\ Translation]\\
-                 \frac{d[T7\ RNAP]}{dt} &amp;=\ [E.Coli\ Translation]\\
-                 \frac{d[T7\ mRNA]}{dt} &amp;=\ [T7\ Transscription] - [T7\ mRNA\ Degradation]\\
-                 \frac{d[Procapsid]}{dt} &amp;=\ -[Phage\ Packaging] + [Phage\ Assembly]\\
-                 \end{aligned}"/>
+![](img/ODEs.png)
 
-Results
+### Results
 
 We used the MATLAB SimBiology toolbox to analyze the reactions numerically.
-Phage Assembly Follows a Temporal Program
+
+#### Phage Assembly Follows a Temporal Program
 
 Evaluating our ODE model we can now follow the time traces of each reaction species in our system. Looking at the mRNA levels, it becomes evident that mRNA transcribed by E. coli RNA polymerase is produced instantly and rapidly reaches a low steady-state level. mRNA transcribed by the T7 RNA polymerase is produced after a time delay and reaches a much higher steady-state level, consistent with the faster transcription rate. Both mRNA levels decrease as the steady state level decreases due to the finite lifetime of the cell extract.
 
 Following protein levels, we see that production of the T7 DNA and RNA polymerases starts first, while production of the T7 RNA polymerase controlled capsid proteins sets in later. When the free capsid proteins exceed the critical concentration    , they start to be assembled into full capsids and the free capsid protein concentration approaches a steady-state. All protein levels approach a final level at the end of the reaction.
-
-A generic square placeholder image with rounded corners in a figure.
-Figur 3 mRNA levels over time in the cell-extract.
+<p align="center">
+<img width="50%" src="http://2018.igem.org/wiki/images/f/f7/T--Munich--RNAspng.png"/>
+ <br>
+ <p align="center">mRNA levels over time in the cell-extract.<br>before and after optimization of the hardware device.</p>
+ </p>
 
 Further, it is instructive to inspect the time traces of free DNA and fully packed active phages. As soon as sufficient T7 DNA polymerase is present, the phage genomes are being amplified to approximately 10 times the initial level. The assembly and packing of functional phages, however, only kicks in after an initial time delay. Importantly, this allows the genome to be freely transcribed and replicated, before the negative feedback introduced by DNA packing, impedes further phage production.
-A generic square placeholder image with rounded corners in a figure.
-Figure 4T7 polymerase generation by the E.coli in-house polymerase
-A generic square placeholder image with rounded corners in a figure.
-Figure 5Phage production and DNA levels over time
-DNA Stability
+<p align="center">
+<img width="50%" src="http://2018.igem.org/wiki/images/e/e3/T--Munich--DNAP.png"/>
+ <br>
+ <p align="center">T7 polymerase generation by the E.coli in-house polymerase</p>
+ </p>
+
+<p align="center">
+<img width="50%" src="http://2018.igem.org/wiki/images/5/5f/T--Munich--DNA-Phage-Empty.png"/>
+ <br>
+ <p align="center">Phage production and DNA levels over time</p>
+ </p>
+
+
+
+#### DNA Stability
 
 To analyze the influence of DNA stability, we screened a range of DNA degradation rates as shown in the figure on the right. Phages are produced until a critical degradation rate of       is reached. This results in lower concentrations of proteins in downstream reactions and resultingly prohibits the formation of procapsids.
-A generic square placeholder image with rounded corners in a figure.
-Figure 6Influence of DNA degradation on the phage production
-Impact of Positive Feedback via DNA Replication
+<p align="center">
+<img width="50%" src="http://2018.igem.org/wiki/images/e/e9/T--Munich--DNA-Degr.png"/>
+ <br>
+ <p align="center">Influence of DNA degradation on the phage production</p>
+ </p>
+ 
+ 
+#### Impact of Positive Feedback via DNA Replication
 
 To evaluate the influence of the positive feedback loop introduced by DNA replication, we conducted experiments with and without addition of dNTPs to the reaction mixture. With our model we can simulate this experiment by setting the DNA replication rate to zero.
 
 The bar plot on the right shows enhanced phage packaging of over one decade by the integrated feedback loop of the T7 DNA polymerase.
-A generic square placeholder image with rounded corners in a figure.
-Figure 7Evaluation of DNA polymerase in the phage production.
-Conclusions
+ 
+ <p align="center">
+<img width="50%" src="http://2018.igem.org/wiki/images/b/b7/T--Munich--BarPlot.png"/>
+ <br>
+ <p align="center">Evaluation of DNA polymerase in the phage production.</p>
+ </p>
+
+
+### Conclusions
 
 Based on the results, we identified that enhancing DNA stability and maximizing protein yield are the most relevant parameters to improve phage titers. After optimizing our protocols accordingly, we reached     phages per 10 µL reaction - sufficient to treat up to 10 patients.
 
-#### References
+### References
 <ol>
 <li id="ref_1"> <a href=https://pubs.acs.org/doi/abs/10.1021/sb300049p>  Shin, J., Jardine, P., &amp; Noireaux, V. (2012). Genome Replication, Synthesis, and Assembly of the Bacteriophage T7 in a Single Cell-Free Reaction. ACS Synthetic Biology, 1(9), 408–413.</a></li>
 <li id="ref_2"> <a href=https://www.jove.com/video/56144/synthesis-infectious-bacteriophages-an-e-coli-based-cell-free>  Rustad, M., Eastlund, A., Marshall, R., Jardine, P., &amp; Noireaux, V. (2017). Synthesis of infectious bacteriophages in an E. coli-based cell-free expression system.
