@@ -15,8 +15,9 @@ Overall design
 The core part of the Phage-Encapsulator consists of a dispensing tip that is continuously fed with phage containing alginate solution by a syringe pump. The dispensing tip is surrounded by a chamber connected to a compressed air supply to create a steady stream of air around the tip that shears off a jet of monodisperse droplets, smaller than the diameter of the tip. The alginate droplets are sprayed into a Calcium-Chloride bath where the rapid crosslinking reaction occurs.
 
 <p align="center">
-<img width="49%" src="http://2018.igem.org/wiki/images/c/c6/T--Munich--hardware_draw1.png" alt="A generic square placeholder image with  ounded corners in a figure.">
-<img width="49%" src="http://2018.igem.org/wiki/images/b/be/T--Munich--hardware_draw2.png" alt="A generic square placeholder image with rounded corners in a figure.">
+<img width="33%" src="http://2018.igem.org/wiki/images/c/c6/T--Munich--hardware_draw1.png" alt="A generic square placeholder image with  ounded corners in a figure.">
+<img width="33%" src="http://2018.igem.org/wiki/images/b/be/T--Munich--hardware_draw2.png" alt="A generic square placeholder image with rounded corners in a figure.">
+ <img width="33%" src="img/Alginat_Droplets.png"/>
 </p>
 
 ### Individual Parts:
