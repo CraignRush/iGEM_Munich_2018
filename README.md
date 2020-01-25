@@ -133,6 +133,9 @@ Due to the complexity of this process, variations in the quality of our cell ext
 
 A phage assembly reaction follows a temporal program (1). First, the genes controlled by E. coli promoters, including the T7 DNA and RNA polymerase are expressed. Once the T7 RNA polymerase is present, the transcription of genes under a T7 promoter, e.g. the capsid proteins, starts. Our experiments revealed that simultaneously the phage genome being is replicated by the T7 DNA polymerase. As soon as a sufficient amount of capsid proteins is produced, they self-assemble to form empty phage capsids. In a final step the phage genome is packed into the empty capsids forming functional phages. In the following paragraphs we develop a set of ordinary differential equations that describe the phage assembly reaction, give analytical results where appropriate and estimate realistic reaction rate constants.
 
+The modelled properties can be shown by the following tree diagram:
+![](img/T7Full.svg)
+
 The complete set of model equations is shown below. 
 #### Reaction Fluxes
 ![](img/fluxes.png)
