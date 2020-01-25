@@ -15,9 +15,9 @@ Overall design
 The core part of the Phage-Encapsulator consists of a dispensing tip that is continuously fed with phage containing alginate solution by a syringe pump. The dispensing tip is surrounded by a chamber connected to a compressed air supply to create a steady stream of air around the tip that shears off a jet of monodisperse droplets, smaller than the diameter of the tip. The alginate droplets are sprayed into a Calcium-Chloride bath where the rapid crosslinking reaction occurs.
 
 <p align="center">
-<img width="33%" src="http://2018.igem.org/wiki/images/c/c6/T--Munich--hardware_draw1.png" alt="A generic square placeholder image with  ounded corners in a figure.">
-<img width="33%" src="http://2018.igem.org/wiki/images/b/be/T--Munich--hardware_draw2.png" alt="A generic square placeholder image with rounded corners in a figure.">
- <img width="33%" src="img/Alginat_Droplets.png"/>
+  <img width="32%" src="http://2018.igem.org/wiki/images/c/c6/T--Munich--hardware_draw1.png" alt="A generic square placeholder image with  ounded corners in a figure."> 
+  <img width="32%" src="http://2018.igem.org/wiki/images/b/be/T--Munich--hardware_draw2.png" alt="A generic square placeholder image with rounded corners in a figure.">
+ <img width="32%" src="img/Alginat_Droplets.png"/>
 </p>
 
 ### Individual Parts:
@@ -52,15 +52,19 @@ Our results show that after 1 hour incubation in simulated gastric fluid, active
 
 #### Droplets are Monodisperse
 <p align="center">
-<img width="49%" src="http://2018.igem.org/wiki/images/8/84/T--Munich--Results_brightfield_droplet2_hardware.png" />
-<img width="49%" src="http://2018.igem.org/wiki/images/9/9c/T--Munich--Results_Droplets_zstack-400_8bit.gif"
+<img width="40%" src="http://2018.igem.org/wiki/images/8/84/T--Munich--Results_brightfield_droplet2_hardware.png" />
+<img width="40%" src="img/Droplets_zstack.gif" />
 </p> 
   
 
 In order to achieve defined phage concentrations and therefore defined doses, we optimized the monodispersity of our alginate droplets.
 
 In our initial attempts to create alginate droplets the size within a batch often varied significantly. Additionally, due to aggregation a lot of droplets were lost. Optimization of parameters such as flow rate, alginate concentration and N2 pressure led to an increase of monodispersity for all tested sizes (50-300 μm). Specifically, an alginate concentration of 1.8 % alginate and 0.2 % low-viscosity alginate proved to be ideal. Pressure and flow rate determine the droplet sizes.
-![](http://2018.igem.org/wiki/images/3/38/T--Munich--Results_droplet_optimization.png)
+<p align="center">
+<img width="50%" src="http://2018.igem.org/wiki/images/3/38/T--Munich--Results_droplet_optimization.png" />
+ <br>
+ <p align="center">Monodispersity of alginate droplets with three different diameters<br>before and after optimization of the hardware device.</p>
+ </p>
 
 #### Bacteriophages Encapsulated In Alginate Can Withstand Gastric Acid 
 
@@ -68,15 +72,22 @@ In our initial attempts to create alginate droplets the size within a batch ofte
 The main problem of oral application is the acidic environment in the gastric fluid, necessitating protective measures against degradation. The other requirement of phage protection is the release of functional phages in the intestines. For this reason we compared the behavior of the encapsulated phages and non-encapsulated phages in simulated gastric fluid (SGF) and simulated intenstinal fluid (SIF).
 
 In SGF, the number of active non-encapsulated phages decreases by more than 99.99 % within an hour. This shows the urgent need of a form of protection against degradation to make oral application of bacteriophages possible. As a reference, we used phages that were chemically released by citrate from alginate droplets.
-
-![](http://2018.igem.org/wiki/images/4/4f/T--Munich--Results_Joe_SGF_Phages.png)
+<p align="center">
+<img  width="50%" src="http://2018.igem.org/wiki/images/4/4f/T--Munich--Results_Joe_SGF_Phages.png" />
+ <br>
+ <p align="center">Non-encapsulated phages are highly degraded<br>within an hour in simulated gastric fluid.</p>
+</p>
 
 
 
 In comparison, the encapsulated phages were tested in SGF for the same time as the non-encapsulated phages. Afterwards, the same droplets were exposed for two hours to simulated intestinal fluid to test the release of functional bacteriophages in this environment.
 
 The encapsulated phages were barely released in an hour of exposure to SGF. After transfering the capsules to SIF the number of active phages reached that of the undegraded reference. This indicates that the encapsulation of bacteriophages in alginate capsules enables the possibility of an oral application. Further experiments could test the alginate capsules in an animal model system.
- ![](http://2018.igem.org/wiki/images/a/a2/T--Munich--Results_Droplets_phages.png)
+<p  align="center">
+<img width="50%" src="http://2018.igem.org/wiki/images/a/a2/T--Munich--Results_Droplets_phages.png"/>
+ <br>
+ <p align="center" >A small amount of encapsulated phages are released in SGF.<br> In SIF, functional phages are released in high concentration.</p>
+ </p>
 
 
 
