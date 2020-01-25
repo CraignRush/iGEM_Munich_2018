@@ -147,7 +147,7 @@ We used the MATLAB SimBiology toolbox to analyze the reactions numerically.
 
 Evaluating our ODE model we can now follow the time traces of each reaction species in our system. Looking at the mRNA levels, it becomes evident that mRNA transcribed by E. coli RNA polymerase is produced instantly and rapidly reaches a low steady-state level. mRNA transcribed by the T7 RNA polymerase is produced after a time delay and reaches a much higher steady-state level, consistent with the faster transcription rate. Both mRNA levels decrease as the steady state level decreases due to the finite lifetime of the cell extract.
 
-Following protein levels, we see that production of the T7 DNA and RNA polymerases starts first, while production of the T7 RNA polymerase controlled capsid proteins sets in later. When the free capsid proteins exceed the critical concentration    , they start to be assembled into full capsids and the free capsid protein concentration approaches a steady-state. All protein levels approach a final level at the end of the reaction.
+Following protein levels, we see that production of the T7 DNA and RNA polymerases starts first, while production of the T7 RNA polymerase controlled capsid proteins sets in later. When the free capsid proteins exceed the critical concentration __K<sub>c</sub>__ , they start to be assembled into full capsids and the free capsid protein concentration approaches a steady-state. All protein levels approach a final level at the end of the reaction.
 <p align="center">
 <img width="50%" src="http://2018.igem.org/wiki/images/f/f7/T--Munich--RNAspng.png"/>
  <br>
@@ -171,7 +171,7 @@ Further, it is instructive to inspect the time traces of free DNA and fully pack
 
 #### DNA Stability
 
-To analyze the influence of DNA stability, we screened a range of DNA degradation rates as shown in the figure on the right. Phages are produced until a critical degradation rate of       is reached. This results in lower concentrations of proteins in downstream reactions and resultingly prohibits the formation of procapsids.
+To analyze the influence of DNA stability, we screened a range of DNA degradation rates as shown in the figure on the right. Phages are produced until a critical degradation rate of __&delta;<sub>g,c</sub> &asymp; 2 &sdot; 10<sup>-4</sup>__ is reached. This results in lower concentrations of proteins in downstream reactions and resultingly prohibits the formation of procapsids.
 <p align="center">
 <img width="50%" src="http://2018.igem.org/wiki/images/e/e9/T--Munich--DNA-Degr.png"/>
  <br>
@@ -194,7 +194,7 @@ The bar plot on the right shows enhanced phage packaging of over one decade by t
 
 ### Conclusions
 
-Based on the results, we identified that enhancing DNA stability and maximizing protein yield are the most relevant parameters to improve phage titers. After optimizing our protocols accordingly, we reached     phages per 10 µL reaction - sufficient to treat up to 10 patients.
+Based on the results, we identified that enhancing DNA stability and maximizing protein yield are the most relevant parameters to improve phage titers. After optimizing our protocols accordingly, we reached __10<sup>7</sup>__ phages per __10 µL__ reaction - sufficient to treat up to 10 patients.
 
 ### References
 <ol>
